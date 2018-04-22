@@ -16,7 +16,8 @@ public class Player extends Thread {
     public void run() {
         try {
             sleep(m_waitingTime);
-            System.out.println("Player wake up: " + m_id);
+            m_operator.result += "Player wake up: " + m_id+"\n";
+            System.out.println("Player wake up: " + m_id );
             isSleep = false;
             m_operator.m_queue.add(this);
         } catch (InterruptedException e) {
